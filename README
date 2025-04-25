@@ -1,0 +1,13 @@
+-------------------------Empezar una simulación----------------------------
+$mkdir "nombre de la carpeta"
+$cd "nombre de la carpeta"/
+$cmake ..
+$make -j12  (no es necesario poner el -j12 pero sirve para trabajar con los 12 nucleos de mi computadora y que sea mas rápido)
+$./MONDEII Cs137_source.mac / Cosmic_Rays.mac / AmBe_source.mac (dependiendo lo que se quiera simular)
+
+Es necesario modificicar la línea de ćódigo del PrimaryGenetaroAction.cc:
+ x0(0*cm), y0(0*cm), z0(-80.0*cm) //Define the particle source position
+Con la posición en la fuente que se va a simular, esta posición bien se puede modificar desde el macro ya que puse la opción (y la desactivé) pero es necesario hacerlo en el archivo .cc debido a que el programa esta definido para poner la posición simulada, la calculada y el error entre ambas (si no pones estas variables y te pasas directo al macro lo que pasará es que no le darás al macro la posición simulada y los histogramas resultantes no te darán el error asociado pero el histograma principal estará ok).
+
+Nota: Hay 3 tipos de visualización; _far, _close_ y _cosmic. Las dos primeras son para ver desde lejos o cerca el detector al momento que se esté haciendo la simulación, se puede intercambiar desde los macros de acción o desactivarla si no es necesario visualizar (que será lo mas habitual).
+

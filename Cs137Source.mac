@@ -1,0 +1,27 @@
+# Inicialización de la física
+/run/initialize
+
+# Configuración de la visualización
+#Compilar el ejecutable con el _close ó _far según sea la distancia de la fuente al detector
+#/control/execute visual_close.mac
+#/control/execute visual_far.mac
+
+/gps/verbose 0
+
+# Configuración de la partícula
+/gps/particle gamma
+/gps/ene/mono 0.6617 MeV
+#/gps/pos/centre 0 0 -6 cm
+
+#Distribución de la fuente
+/gps/ang/type cos
+/gps/pos/type Point
+
+#Angulo calculado 
+/gps/ang/mintheta 0 deg
+/gps/ang/maxtheta 13.5 deg 
+/gps/ang/minphi 0 deg
+/gps/ang/maxphi 360 deg 
+
+#/run/printProgress 50
+/run/beamOn 50000
